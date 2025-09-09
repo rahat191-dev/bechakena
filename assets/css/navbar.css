@@ -21,7 +21,6 @@ h1 {
 .brand img {
     width: 40px;
     height: 40px;
-    color: var(--text-color);
     cursor: pointer;
 }
 .all-items {
@@ -119,7 +118,7 @@ border-radius: 999px;
     text-decoration: none;
     color: black;
     background-color: rgb(243, 190, 15);
-    padding: 10px 15px;
+    padding: 5px 15px;
     border-radius: 999px;
 }
 .user-btn a {
@@ -164,4 +163,13 @@ border-radius: 999px;
     height: 4px;
     border-radius: 2px;
 }
+h1 {
+    display: none;
+}
+.post-ad {
+    font-size: 0.9rem;
+}
+.brand img {
+    width: 35px;
+    height: 35px
 }
