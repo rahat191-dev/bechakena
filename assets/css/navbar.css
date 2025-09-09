@@ -100,7 +100,7 @@ border-radius: 999px;
     border-radius: 999px;
     width: 800px;
     height: 50px;
-    padding: 5px 50px 5px 15px;
+    padding: 0 55px 0 20px;
     outline: none;
 }
 #searchBtn {
@@ -137,7 +137,6 @@ border-radius: 999px;
     border-radius: 999px;
     width: 300px;
     height: 50px;
-    padding: 5px;
     outline: none;
 }  
 #searchBtn {
@@ -147,7 +146,8 @@ border-radius: 999px;
     display: none;
 }
 .user-page {
-    display: none;
+    display: flex;
+    position: absolute;
 }
 .hamburger {
     display: flex;
