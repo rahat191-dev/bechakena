@@ -24,7 +24,11 @@
   height: 40px;
   cursor: pointer;
 }
-
+.brand-name {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
 h1 {
   font-size: 1.4rem;
   color: var(--text-color);
@@ -37,6 +41,7 @@ h1 {
   color: var(--text-color);
   font-size: 1rem;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .user-btn {
