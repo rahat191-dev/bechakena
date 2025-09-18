@@ -8,7 +8,6 @@ const overlay = document.getElementById("overlay");
 const mobileButtonsDiv = document.querySelector(".mobile-buttons");
 const closeBtn = document.getElementById("close");
 
-// Buttons to clone
 const buttonsToClone = [
   document.getElementById("all-items"),
   document.getElementById("login"),
