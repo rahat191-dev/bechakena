@@ -3,31 +3,35 @@ fetch("components/navbar.html")
   .then(data => {
     document.getElementById("navbar").innerHTML = data;
 
-   // Select elements AFTER DOM is loaded
-const hamburger = document.getElementById("hamburger");
-const closeBtn = document.getElementById("close");
+ const hamburger = document.getElementById("hamburger");
 const overlay = document.getElementById("overlay");
+const mobileButtonsDiv = document.querySelector(".mobile-buttons");
+const closeBtn = document.getElementById("close");
 
-// Put sidebar buttons inside an array
-const menuButtons = Array.from(document.querySelectorAll("#user-page, #all-items"));
+// Buttons to clone
+const buttonsToClone = [
+  document.getElementById("all-items"),
+  document.getElementById("login"),
+  document.getElementById("signup")
+];
+
+buttonsToClone.forEach(el => {
+  if(el) mobileButtonsDiv.appendChild(el.cloneNode(true));
+});
 
 hamburger.addEventListener("click", () => {
-  // Add active class
-  menuButtons.forEach(btn => btn.classList.add("active"));
-  document.getElementById("user-page").classList.add("active");
-  overlay.style.display = "block";
+  mobileButtonsDiv.parentElement.classList.add("open"); // parent div e class
+  overlay.classList.add("active");
 });
 
 closeBtn.addEventListener("click", () => {
-  menuButtons.forEach(btn => btn.classList.remove("active"));
-  document.getElementById("user-page").classList.remove("active");
-  overlay.style.display = "none";
+  mobileButtonsDiv.parentElement.classList.remove("open");
+  overlay.classList.remove("active");
 });
 
 overlay.addEventListener("click", () => {
-  menuButtons.forEach(btn => btn.classList.remove("active"));
-  document.getElementById("user-page").classList.remove("active");
-  overlay.style.display = "none";
+  mobileButtonsDiv.parentElement.classList.remove("open");
+  overlay.classList.remove("active");
 });
 
   });
