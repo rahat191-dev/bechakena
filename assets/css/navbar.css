@@ -234,7 +234,7 @@ h1 {
   left: 0;
   align-items: start;
 }
-.cloned-btns .mobile-buttons button {
+.cloned-btns .mobile-buttons .all-items {
   border-bottom: 1px solid white;
 
 }

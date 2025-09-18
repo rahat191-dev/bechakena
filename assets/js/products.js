@@ -15,7 +15,6 @@ let products = [
 {image: "assets/images/products/electronics/1880.jpg",category: "electronics", name: "Rechargable Fan", model:1880, price:850 },
 {image: "assets/images/products/laptops/asus1.jpg",category: "laptops", name: "Asus Laptop", model:"Caleton N4020 15.6' FHD", price:29999 },
 {image: "assets/images/products/laptops/hp1.jpg",category: "laptops", name: "Hp Laptop", model:"HP 15.6 Ryzon 5", price:4499 },
-
 ];
 
 const contains = document.getElementById("product-list");
@@ -32,4 +31,4 @@ div.innerHTML = `
 </div>
 `;
 contains.appendChild(div);
-}
+};
