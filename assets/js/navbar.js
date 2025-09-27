@@ -19,7 +19,7 @@ buttonsToClone.forEach(el => {
 });
 
 hamburger.addEventListener("click", () => {
-  mobileButtonsDiv.parentElement.classList.add("open"); // parent div e class
+  mobileButtonsDiv.parentElement.classList.add("open");
   overlay.classList.add("active");
 });
 
@@ -32,5 +32,4 @@ overlay.addEventListener("click", () => {
   mobileButtonsDiv.parentElement.classList.remove("open");
   overlay.classList.remove("active");
 });
-
   });

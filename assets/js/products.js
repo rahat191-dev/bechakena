@@ -19,16 +19,49 @@ let products = [
 
 const contains = document.getElementById("product-list");
 
-for (let i=0; i<products.length; i++) {
-const div= document.createElement("div");
-div.classList.add("product-card");
-div.innerHTML = `
-<img src="${products[i].image}">
-<div>
-<h3>${products[i].name}</h3>
-<P>${products[i].model}</p>
-<P>Price <span style="color:#01a884;">৳${products[i].price}</span></p>
-</div>
-`;
-contains.appendChild(div);
-};
+function showProducts(list) {
+  contains.innerHTML = "";
+  list.forEach(product => {
+    const div = document.createElement("div");
+    div.classList.add("product-card");
+    div.innerHTML = `
+      <img src="${product.image}">
+      <div>
+        <h3>${product.name}</h3>
+        <p>${product.model}</p>
+        <p>Price <span style="color:#01a884;">৳${product.price}</span></p>
+      </div>
+    `;
+    contains.appendChild(div);
+  });
+}
+
+function filterSelection(c) {
+  if (c === "all") {
+    showProducts(products);
+  } else {
+    const filtered = products.filter(product => product.category === c);
+    showProducts(filtered);
+  }
+}
+
+function searchProducts() {
+  const query = document.getElementById("searchInput").value.toLowerCase();
+  const filtered = products.filter(product =>
+    product.name.toLowerCase().includes(query) ||
+    product.model.toString().toLowerCase().includes(query) ||
+    product.category.toLowerCase().includes(query)
+  );
+  showProducts(filtered);
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  filterSelection("all");
+
+  document.getElementById("searchBtn").addEventListener("click", (e) => {
+    e.preventDefault();
+    searchProducts();
+  });
+
+  document.getElementById("searchInput").addEventListener("keyup", searchProducts);
+});
