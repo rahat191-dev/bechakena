@@ -67,7 +67,7 @@ h1 {
   gap: 20px;
 }
 
-.filter-search a {
+.drop-category button, .filter-search a {
   display: flex;
   align-items: center;
   font-size: 0.9rem;
@@ -76,12 +76,58 @@ h1 {
   background-color: rgb(36, 122, 94);
   padding: 5px 10px;
   border-radius: 999px;
+  color: white;
 }
 
-.filter-search a img {
+.drop-category button img,.filter-search a img {
   width: 25px;
   height: 20px;
   padding-right: 5px;
+}
+.drop-category {
+  position: relative;
+  display: inline-block;
+}
+.category {
+    background: none;
+  border: none;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  gap: 5px;
+
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  min-width: 180px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  z-index: 1000;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.dropdown-content button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  background: none;
+  text-align: left;
+  cursor: pointer;
+  color: black;
+}
+
+.dropdown-content button:hover {
+  background: #f5f5f5;
+}
+
+.show {
+  display: block;
 }
 
 .search-bar {

@@ -27,16 +27,17 @@
       <div class="mobile-buttons"></div>
       </div>
     </div>
-
     <div class="filter-search">
       <a class="all"><img src="assets/images/map.png">সমগ্র বাংলাদেশ</a>
-      <a class="category"><img src="assets/images/category.png">ক্যাটাগরি</a>
-    </div>
-  <div class="filters">
+      <div class="drop-category">
+      <button class="category"><img src="assets/images/category.png">ক্যাটাগরি</button>
+      <div class="filters dropdown-content">
     <button onclick="filterSelection('all')">সকল বিজ্ঞাপন</button>
-    <button onclick="filterSelection('electronics')">Electronics</button>
-    <button onclick="filterSelection('laptops')">Laptop</button>
+    <button onclick="filterSelection('electronics')">ইলেকট্রনিক্স</button>
+    <button onclick="filterSelection('laptops')">ল্যাপটপ</button>
   </div>
+    </div>
+    </div>
     <div class="search-bar">
       <input type="text" id="searchInput" placeholder="এখানে খুঁজুন">
       <button id="searchBtn"><img src="assets/images/search.png" alt="Search"></button>

@@ -32,4 +32,18 @@ overlay.addEventListener("click", () => {
   mobileButtonsDiv.parentElement.classList.remove("open");
   overlay.classList.remove("active");
 });
+
+document.querySelector(".category").addEventListener("click", () => {
+  document.querySelector(".dropdown-content").classList.toggle("show");
+});
+
+window.addEventListener("click", (e) => {
+  if (!e.target.closest(".drop-category")) {
+    document.querySelector(".dropdown-content").classList.remove("show");
+  }
+});
+
+function filterSelection(category) {
+  console.log("Filter:", category);
+}
   });
