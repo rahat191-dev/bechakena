@@ -1,15 +1,12 @@
-// Fuse.js options
 const options = {
   keys: ["name", "model", "category", "location"],
-  threshold: 0.4, // spelling error সহ match
+  threshold: 0.4,
 };
 const fuse = new Fuse(products, options);
 
-// Selected filters
 let selectedLocation = "all";
 let selectedCategory = "all";
 
-// Show products function
 function showProducts(list) {
   const contains = document.getElementById("product-list");
   contains.innerHTML = "";
@@ -28,14 +25,11 @@ function showProducts(list) {
   });
 }
 
-// Filter function for search + location + category
 function filterProducts() {
   const query = document.getElementById("searchInput").value.trim();
 
-  // Fuse.js search
   let results = query ? fuse.search(query).map(r => r.item) : products;
 
-  // Apply location & category filters
   let filtered = results.filter(product =>
     (selectedLocation === "all" || product.location === selectedLocation) &&
     (selectedCategory === "all" || product.category === selectedCategory)
@@ -43,8 +37,6 @@ function filterProducts() {
 
   showProducts(filtered);
 }
-
-// Button onclick functions
 function filterByLocation(loc) {
   selectedLocation = loc;
   filterProducts();
@@ -55,14 +47,12 @@ function filterByCategory(cat) {
   filterProducts();
 }
 
-// Search input
 document.getElementById("searchInput").addEventListener("keyup", filterProducts);
 document.getElementById("searchBtn").addEventListener("click", (e) => {
   e.preventDefault();
   filterProducts();
 });
 
-// Initial display
 document.addEventListener("DOMContentLoaded", () => {
   showProducts(products);
 });
