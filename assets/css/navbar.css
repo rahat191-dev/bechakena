@@ -103,7 +103,8 @@ h1 {
   display: none;
   position: absolute;
   top: 100%;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
   background: #fff;
   padding: 12px;
   border-radius: 8px;
@@ -111,18 +112,18 @@ h1 {
   z-index: 1000;
   flex-wrap: wrap;
   gap: 8px;
+  justify-content: center;
 }
 
 .location-category {
   position: relative;
+  display: inline-block;
 }
 
-/* Hover করলে dropdown আসবে */
 .location-category:hover .location-dropdown {
   display: flex;
 }
 
-/* 🔹 Category dropdown */
 .drop-category {
   position: relative;
   display: inline-block;
