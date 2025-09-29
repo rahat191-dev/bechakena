@@ -77,6 +77,7 @@ h1 {
   padding: 5px 10px;
   border-radius: 999px;
   color: white;
+  cursor: pointer;
 }
 
 .drop-category button img,.filter-search a img {
@@ -88,7 +89,7 @@ h1 {
   position: relative;
   display: inline-block;
 }
-.category {
+.products-category {
     background: none;
   border: none;
   font-size: 16px;
@@ -98,36 +99,58 @@ h1 {
   gap: 5px;
 
 }
+/* 🔹 Location filter container */
+.location-dropdown, 
 .dropdown-content {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background: #fff;
-  min-width: 180px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-  z-index: 1000;
-  border-radius: 6px;
-  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 15px 0;
 }
 
-.dropdown-content button {
-  display: block;
-  width: 100%;
-  padding: 10px;
-  border: none;
-  background: none;
-  text-align: left;
+/* 🔹 Common button style */
+.filters button {
+  padding: 8px 16px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background: #f8f9fa;
+  font-size: 14px;
   cursor: pointer;
-  color: black;
+  transition: all 0.2s ease-in-out;
+}
+
+/* 🔹 Hover effect */
+.filters button:hover {
+  background: #4f46e5;   /* নীল রঙ */
+  color: #fff;
+  border-color: #4f46e5;
+}
+
+/* 🔹 Active/selected button */
+.filters button.active {
+  background: #3730a3;
+  color: #fff;
+  border-color: #3730a3;
+}
+
+/* 🔹 Category filter আলাদা রঙ দিতে চাইলে */
+.dropdown-content button {
+  background: #fff;
+  border: 1px solid #ccc;
 }
 
 .dropdown-content button:hover {
-  background: #f5f5f5;
+  background: #06b6d4;  /* টিল রঙ */
+  color: white;
+  border-color: #06b6d4;
 }
 
+.dropdown-content button.active {
+  background: #0e7490;
+  color: white;
+  border-color: #0e7490;
+}
 .show {
-  display: block;
 }
 
 .search-bar {

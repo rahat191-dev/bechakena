@@ -33,7 +33,7 @@ overlay.addEventListener("click", () => {
   overlay.classList.remove("active");
 });
 
-document.querySelector(".category").addEventListener("click", () => {
+document.querySelector(".products-category").addEventListener("click", () => {
   document.querySelector(".dropdown-content").classList.toggle("show");
 });
 
@@ -45,5 +45,7 @@ window.addEventListener("click", (e) => {
 
 function filterSelection(category) {
   console.log("Filter:", category);
-}
+};
+
+document.querySelector(".")
   });
