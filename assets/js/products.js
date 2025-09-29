@@ -79,11 +79,19 @@ function filterProducts() {
 function filterByLocation(loc) {
   selectedLocation = loc;
   filterProducts();
+
+   const locationBtn = document.querySelector(".location-category .all");
+  const btnText = document.querySelector(`.location-dropdown button[onclick="filterByLocation('${loc}')"]`).innerText;
+  locationBtn.innerHTML = `<img src="assets/images/map.png">${btnText}`;
 }
 
 function filterByCategory(cat) {
   selectedCategory = cat;
   filterProducts();
+
+  const categoryBtn = document.querySelector(".products-category");
+  const btnText = document.querySelector(`.dropdown-content button[onclick="filterByCategory('${cat}')"]`).innerText;
+  categoryBtn.innerHTML = `<img src="assets/images/category.png">${btnText}`;
 }
 
 function searchProducts() {
