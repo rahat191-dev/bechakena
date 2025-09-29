@@ -1,38 +1,15 @@
-<!DOCTYPE html>
-<html lang="bn">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="assets/images/app-logo2.png">
-    <title>BechaKena</title>
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="stylesheet" href="assets/css/navbar.css">
-    <link rel="stylesheet" href="assets/css/products.css">
-    <link rel="stylesheet" href="assets/css/footer.css">
-</head>
-<body>
-    <div id="navbar"></div>
-    <div id="product-list"></div>
-    <div id="footer-container"></div>
-    <script src="assets/js/navbar.js"></script>
-<script src="assets/js/script.js"></script>
-<script src="assets/js/products.js"></script>
-<script src="assets/js/footer.js"></script>
-<!-- Fuse.js CDN -->
-<script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.min.js"></script>
-
-<script>
-let selectedLocation = "all";
-let selectedCategory = "all";
-
-// Fuse.js setup
+// Fuse.js options
 const options = {
   keys: ["name", "model", "category", "location"],
-  threshold: 0.4, // 0.0 strict, 1.0 loose
+  threshold: 0.4, // spelling error সহ match
 };
 const fuse = new Fuse(products, options);
 
-// Show products
+// Selected filters
+let selectedLocation = "all";
+let selectedCategory = "all";
+
+// Show products function
 function showProducts(list) {
   const contains = document.getElementById("product-list");
   contains.innerHTML = "";
@@ -51,15 +28,15 @@ function showProducts(list) {
   });
 }
 
-// Combined filter function
+// Filter function for search + location + category
 function filterProducts() {
   const query = document.getElementById("searchInput").value.trim();
-  
+
   // Fuse.js search
   let results = query ? fuse.search(query).map(r => r.item) : products;
 
-  // Apply location & category filter
-  const filtered = results.filter(product =>
+  // Apply location & category filters
+  let filtered = results.filter(product =>
     (selectedLocation === "all" || product.location === selectedLocation) &&
     (selectedCategory === "all" || product.category === selectedCategory)
   );
@@ -67,7 +44,7 @@ function filterProducts() {
   showProducts(filtered);
 }
 
-// Button click functions
+// Button onclick functions
 function filterByLocation(loc) {
   selectedLocation = loc;
   filterProducts();
@@ -78,7 +55,7 @@ function filterByCategory(cat) {
   filterProducts();
 }
 
-// Event listeners
+// Search input
 document.getElementById("searchInput").addEventListener("keyup", filterProducts);
 document.getElementById("searchBtn").addEventListener("click", (e) => {
   e.preventDefault();
@@ -89,7 +66,3 @@ document.getElementById("searchBtn").addEventListener("click", (e) => {
 document.addEventListener("DOMContentLoaded", () => {
   showProducts(products);
 });
-</script>
-
-</body>
-</html>
