@@ -67,7 +67,6 @@ document.addEventListener("DOMContentLoaded", () => {
 });let selectedLocation = "all";
 let selectedCategory = "all";
 
-// 🔹 লোকেশন + ক্যাটাগরি অনুযায়ী ফিল্টার
 function filterProducts() {
   let filtered = products.filter(product => {
     let locationMatch = selectedLocation === "all" || product.location === selectedLocation;
@@ -77,19 +76,16 @@ function filterProducts() {
   showProducts(filtered);
 }
 
-// 🔹 লোকেশন বাটন ক্লিক করলে
 function filterByLocation(loc) {
   selectedLocation = loc;
   filterProducts();
 }
 
-// 🔹 ক্যাটাগরি বাটন ক্লিক করলে
 function filterByCategory(cat) {
   selectedCategory = cat;
   filterProducts();
 }
 
-// 🔹 সার্চ করলে
 function searchProducts() {
   const query = document.getElementById("searchInput").value.toLowerCase();
   const filtered = products.filter(product =>
