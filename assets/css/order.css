@@ -1,0 +1,107 @@
+.order-container {
+  display: flex;
+  align-items: center;
+  padding: 40px 20px;
+  background: #f9f9f9;
+  min-height: 100vh;
+  gap: 40px;
+  justify-content: center;
+}
+
+.product-info {
+  text-align: center;
+  margin-bottom: 30px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 500px;
+}
+
+.product-info img {
+  width: 200px;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.product-info h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.product-info p {
+  font-size: 16px;
+  margin: 5px 0;
+}
+
+form {
+  background: #fff;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 500px;
+}
+
+form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #444;
+}
+
+form input, form select {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 18px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: 0.3s;
+}
+
+form input:focus {
+  border-color: #01a884;
+  outline: none;
+  box-shadow: 0 0 6px rgba(1,168,132,0.3);
+}
+
+form button {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  background: #01a884;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+form button:hover {
+  background: #018c70;
+}
+
+.price-details {
+  text-align: center;
+  margin-top: 20px;
+  border-top: 1px solid #eee;
+  padding-top: 15px;
+  padding-bottom: 10px;
+}
+
+.price-details #totalPrice {
+  font-size: 16px;
+  color: #ff0000;
+  font-weight: bold;
+}
+@media (max-width: 768px) {
+  .order-container {
+    flex-direction: column;
+    padding: 20px 10px;
+  }
+}

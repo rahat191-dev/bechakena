@@ -32,6 +32,12 @@ function showProducts(list) {
         <p>Price <span style="color:#01a884;">৳${product.price}</span></p>
       </div>
     `;
+
+      div.addEventListener("click", () => {
+      localStorage.setItem("selectedProduct", JSON.stringify(product));
+      window.location.href = "order.html";
+    });
+
     contains.appendChild(div);
   });
 }

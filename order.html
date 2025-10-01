@@ -1,0 +1,44 @@
+<title>Order Now</title>
+<link rel="stylesheet" href="assets/css/order.css">
+<link rel="stylesheet" href="assets/css/navbar.css">
+<link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <div id="navbar"></div>
+  <div class="order-container">
+    <div class="product-info">
+      <img id="productImage" alt="Product">
+      <h2 id="productName"></h2>
+      <p id="productModel"></p>
+    </div>
+
+    <form id="orderForm">
+      <label for="customerName">Name:</label>
+      <input type="text" id="customerName" required>
+
+      <label for="phone">Phone:</label>
+      <input type="tel" id="phone" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" required>
+      
+      <label for="address">Address:</label>
+      <input id="address" required>
+
+      <!-- Quantity Dropdown -->
+      <label for="quantity">Quantity:</label>
+      <select id="quantity" required></select>
+
+      <div class="price-details">
+        <p id="productsPrice"></p>
+        <p id="deliveryCharge"></p>
+        <p id="totalPrice"></p>
+      </div>
+
+      <button type="submit">Place Order</button>
+    </form>
+  </div>
+
+  <script src="assets/js/order.js"></script>
+</body>
+</html>
