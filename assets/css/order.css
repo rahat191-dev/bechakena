@@ -1,12 +1,13 @@
 .order-container {
   display: flex;
   align-items: center;
+  justify-content: center;
+  gap: 40px;
   padding: 40px 20px;
   background: #f9f9f9;
   min-height: 100vh;
-  gap: 40px;
-  justify-content: center;
 }
+
 
 .product-info {
   text-align: center;
