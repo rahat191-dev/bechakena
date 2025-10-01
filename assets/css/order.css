@@ -87,6 +87,14 @@ form button:hover {
   background: #018c70;
 }
 
+form .order-confirmation {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #333;
+  text-align: center;
+}
+
 .price-details {
   text-align: center;
   margin-top: 20px;
