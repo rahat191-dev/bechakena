@@ -1,6 +1,5 @@
 .order-container {
   display: flex;
-  align-items: center;
   justify-content: center;
   gap: 40px;
   padding: 40px 20px;
@@ -108,6 +107,95 @@ form .order-confirmation {
   color: #ff0000;
   font-weight: bold;
 }
+.payment-container {
+  max-width: 450px;
+  margin: 30px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+  font-family: "Segoe UI", sans-serif;
+}
+
+.payment-container h5 {
+  font-size: 18px;
+  margin: 20px 0 15px;
+  color: #444;
+  text-align: center;
+  font-weight: 600;
+}
+
+.payment-cash,
+.payment-card,
+.payment-bkash {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 18px;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  background: #fafafa;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.payment-cash:hover,
+.payment-card:hover,
+.payment-bkash:hover {
+  border-color: #4CAF50;
+  background: #f3fff3;
+}
+
+.payment-cash p,
+.payment-card p,
+.payment-bkash p {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+}
+
+.place-order-btn,
+.add-card,
+.add-bkash {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.place-order-btn {
+  background: linear-gradient(135deg, #4CAF50, #45a049);
+  color: #fff;
+}
+
+.place-order-btn:hover {
+  background: linear-gradient(135deg, #43a047, #388e3c);
+  transform: translateY(-2px);
+}
+
+.add-card {
+  background: #2196F3;
+  color: white;
+}
+
+.add-card:hover {
+  background: #1976D2;
+}
+
+.add-bkash {
+  background: #e91e63;
+  color: white;
+}
+
+.add-bkash:hover {
+  background: #c2185b;
+}
+
 @media (max-width: 768px) {
   .order-container {
     flex-direction: column;

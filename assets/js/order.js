@@ -29,6 +29,7 @@ if(product){
   document.getElementById("productName").innerText = product.name;
   document.getElementById("productImage").src = product.image;
   document.getElementById("productModel").innerText = "Model: " + product.model;
+  document.getElementById("productPrice").innerText = "Product Price: ৳" + product.price;
 
   updatePrices();
 
