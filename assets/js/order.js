@@ -106,3 +106,8 @@ document.getElementById("bkashForm").addEventListener("submit", function(e){
   alert("✅ Bkash Payment Successful!");
   document.getElementById("bkashModal").style.display = "none";
 });
+fetch("components/footer.html")
+    .then(res => res.text())
+    .then(data => {
+        document.getElementById("footer-container").innerHTML = data;
+    });
