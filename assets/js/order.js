@@ -40,3 +40,69 @@ document.getElementById("orderForm").addEventListener("submit", function(e){
   e.preventDefault();
   alert("✅ Your order has been placed successfully!");
 });
+
+function setupModal(openBtnId, modalId, closeBtnId) {
+  const openBtn = document.getElementById(openBtnId);
+  const modal = document.getElementById(modalId);
+  const closeBtn = document.getElementById(closeBtnId);
+
+  openBtn.addEventListener("click", function(e){
+    e.preventDefault();
+    modal.style.display = "flex";
+  });
+
+  closeBtn.addEventListener("click", function(){
+    modal.style.display = "none";
+  });
+
+  window.addEventListener("click", function(e){
+    if(e.target === modal){
+      modal.style.display = "none";
+    }
+  });
+}
+
+setupModal("cardBtn", "cardModal", "closeModal");
+
+setupModal("bkashBtn", "bkashModal", "closeBkashModal");
+
+document.getElementById("cardForm").addEventListener("submit", function(e){
+  e.preventDefault();
+  const cardNumber = document.getElementById("cardNumber").value.trim();
+  const expiryDate = document.getElementById("expiryDate").value.trim();
+  const cvv = document.getElementById("cvv").value.trim();
+
+  if(cardNumber.length !== 16 || isNaN(cardNumber)){
+    alert("❌ Invalid Card Number");
+    return;
+  }
+  if(!/^\d{2}\/\d{2}$/.test(expiryDate)){
+    alert("❌ Invalid Expiry Date (MM/YY)");
+    return;
+  }
+  if(cvv.length !== 3 || isNaN(cvv)){
+    alert("❌ Invalid CVV");
+    return;
+  }
+
+  alert("✅ Card Payment Successful!");
+  document.getElementById("cardModal").style.display = "none";
+});
+
+document.getElementById("bkashForm").addEventListener("submit", function(e){
+  e.preventDefault();
+  const bkashNumber = document.getElementById("bkashNumber").value.trim();
+  const bkashPin = document.getElementById("bkashPin").value.trim();
+
+  if(bkashNumber.length !== 11 || isNaN(bkashNumber)){
+    alert("❌ Invalid Bkash Number");
+    return;
+  }
+  if(bkashPin.length < 4){
+    alert("❌ Invalid PIN");
+    return;
+  }
+
+  alert("✅ Bkash Payment Successful!");
+  document.getElementById("bkashModal").style.display = "none";
+});
