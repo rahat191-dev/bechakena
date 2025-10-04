@@ -140,6 +140,10 @@ form .order-confirmation {
   cursor: pointer;
 }
 
+.payment-bkash {
+  gap: 15px;
+}
+
 .payment-cash:hover,
 .payment-card:hover,
 .payment-bkash:hover {
