@@ -51,16 +51,6 @@ function filterSelection(c) {
   }
 }
 
-function searchProducts() {
-  const query = document.getElementById("searchInput").value.toLowerCase();
-  const filtered = products.filter(product =>
-    product.name.toLowerCase().includes(query) ||
-    product.model.toString().toLowerCase().includes(query) ||
-    product.category.toLowerCase().includes(query)
-  );
-  showProducts(filtered);
-}
-
 document.addEventListener("DOMContentLoaded", () => {
   filterSelection("all");
 

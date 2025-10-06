@@ -46,6 +46,5 @@ window.addEventListener("click", (e) => {
 function filterSelection(category) {
   console.log("Filter:", category);
 };
-
-document.querySelector(".")
   });
+  
